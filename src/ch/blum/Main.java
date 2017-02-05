@@ -62,6 +62,8 @@ public class Main {
                         System.err.format("option '%s': invalid int value %s\n", arg, args[i+1]);
                         System.exit(1);
                     }
+
+                    i++;
                 } else {
                     System.err.format("option '%s' requires an argument\n", arg);
                     System.exit(1);
@@ -79,6 +81,8 @@ public class Main {
                         System.err.format("option '%s': invalid int value %s\n", arg, args[i+1]);
                         System.exit(1);
                     }
+
+                    i++;
                 } else {
                     System.err.format("option '%s' requires an argument\n", arg);
                     System.exit(1);
@@ -96,6 +100,8 @@ public class Main {
                         System.err.format("option '%s': invalid int value %s\n", arg, args[i + 1]);
                         System.exit(1);
                     }
+
+                    i++;
                 } else {
                     System.err.format("option '%s' requires an argument\n", arg);
                     System.exit(1);
@@ -128,7 +134,7 @@ public class Main {
         }
 
         if (positionalCounter < 3) {
-            System.err.println("missing arguments");
+            System.err.println("Missing arguments. Type --help to display help message.");
             System.exit(1);
         } else if (! bedFile.isFile()) {
             System.err.format("%s: no such file or directory\n", bedFile.getPath());
