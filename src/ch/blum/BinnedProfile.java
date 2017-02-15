@@ -65,7 +65,7 @@ public class BinnedProfile {
                             continue;
                         else {
                             System.err.format("%s: unknown chromosome '%s' at line %d\n",
-                                    this.tableFile.getPath(), chrom, lineNumber);
+                                    this.bedFile.getPath(), chrom, lineNumber);
                             System.exit(1);
                         }
                     }
