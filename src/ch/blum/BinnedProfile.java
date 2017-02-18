@@ -106,10 +106,10 @@ public class BinnedProfile {
                     prevPos1 = pos1;
                 }
             } catch (ArrayIndexOutOfBoundsException e) {
-                System.err.format("%s: 7 columns expected at line %d\n", this.tableFile.getPath(), lineNumber);
+                System.err.format("%s: 6 columns expected at line %d\n", this.bedFile.getPath(), lineNumber);
                 System.exit(1);
             } catch (NumberFormatException e) {
-                System.err.format("%s: invalid number at line %d\n", this.tableFile.getPath(), lineNumber);
+                System.err.format("%s: invalid number at line %d\n", this.bedFile.getPath(), lineNumber);
                 System.exit(1);
             }
         } catch (IOException e) {
@@ -136,7 +136,7 @@ public class BinnedProfile {
 
                     String[] cols = line.trim().split("\t");
 
-                    // chr2L	500	1000	1	1	1	0
+                    // chr1	3000500	3001000	4	3	3	2	4	3	4   3   2	3	3	0	0	2	1	1
                     String chrom = cols[0];
 
                     if (this.sections.get(chrom) == null) {
@@ -210,7 +210,7 @@ public class BinnedProfile {
                     this.sections.get(chrom).addLocalQC5(position, intensity, sum_disp50, flag);
                 }
             } catch (ArrayIndexOutOfBoundsException e) {
-                System.err.format("%s: 7 columns expected at line %d\n", this.tableFile.getPath(), lineNumber);
+                System.err.format("%s: 19 columns expected at line %d\n", this.tableFile.getPath(), lineNumber);
                 System.exit(1);
             } catch (NumberFormatException e) {
                 System.err.format("%s: invalid number at line %d\n", this.tableFile.getPath(), lineNumber);
