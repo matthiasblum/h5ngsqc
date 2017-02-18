@@ -36,6 +36,10 @@ public class BinnedProfile {
     public void loadWiggles(int readExtension, boolean skip, boolean quiet) {
         int lineNumber = 0;
 
+        /**
+         * todo: read from stdin with:
+         * br = new BufferedReader(new InputStreamReader(System.in));
+         */
         try (FileInputStream fis = new FileInputStream(this.bedFile)) {
 
             try (BufferedReader br = new BufferedReader(isGzipped(this.bedFile) ?
