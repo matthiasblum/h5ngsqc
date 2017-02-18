@@ -21,9 +21,9 @@ Stored data are fixed-size windows or *bin*:
 
 | Option      | Description           | Default  |
 | :----------- |:-------------:| :-----:|
-| -s, --span  | resolution in bp of wiggle bins | 50 |
-| -e, --ext   | read extension in bp for wiggle bins | 150 |
-| --bg        | background threshold for localQCs | 0 |
+| -s, --span INT  | resolution in bp of wiggle bins | 50 |
+| -e, --ext INT  | read extension in bp for wiggle bins | 150 |
+| --bg INT       | background threshold for localQCs | 0 |
 | -5          | enable 5-replicates localQCs | false |
 | --skip      | do not stop the program if a localQC or a read is on an unknown chromosome | false |
 | --quiet     | do not display progress messages | false  |
