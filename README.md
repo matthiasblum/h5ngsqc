@@ -34,7 +34,7 @@ Stored data are fixed-size windows or *bins*:
  While computing wiggles, two values are associated at each bin: the intensity, and the intensity without PCR duplicates.
  To identify PCR duplicates, the BED file has to be sorted as follows:
  
-    $ sort -k1,1V -k2,2n profile.bed > profile.sort.bed
+    sort -k1,1V -k2,2n profile.bed > profile.sort.bed
     
 ## Todo
 
