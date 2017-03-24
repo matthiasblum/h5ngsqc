@@ -26,6 +26,7 @@ Stored data are fixed-size windows or *bins*:
 | --bg INT       | background threshold for localQCs | 0 |
 | -5          | enable 5-replicates localQCs | false |
 | --skip      | do not stop the program if a localQC or a read is on an unknown chromosome | false |
+| --forgive   | skip invalid lines instead of stopping the program | false |
 | --quiet     | do not display progress messages | false  |
 
 

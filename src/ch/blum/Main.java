@@ -19,6 +19,7 @@ public class Main {
         System.out.format("         --bg INT          global background threshold for localQCs (default: 0).\n");
         System.out.format("         -5                switch to '5-replicates' mode. TABLE file is expected to contain more columns.\n");
         System.out.format("         --skip            skip reads/bins on unknown chromosome instead of stopping the program.\n");
+        System.out.format("         --forgive         skip invalid lines instead of stopping the program.\n");
         System.out.format("         --quiet           do not display progress messages.\n");
     }
 
@@ -35,6 +36,7 @@ public class Main {
         int backgroundThreshold = 0;
         boolean useFiveReps = false;
         boolean skip = false;
+        boolean forgive = false;
         boolean quiet = false;
 
         int positionalCounter = 0;
@@ -110,6 +112,8 @@ public class Main {
                 useFiveReps = true;
             } else if (arg.equals("--skip")) {
                 skip = true;
+            } else if (arg.equals("--forgive")) {
+                forgive = true;
             } else if (arg.equals("--quiet")) {
                 quiet = true;
             } else if (arg.charAt(0) == '-') {
@@ -152,11 +156,11 @@ public class Main {
 
         if (! quiet)
             System.err.println("Loading LocalQCs");
-        profile.loadLocalQCs(backgroundThreshold, useFiveReps, skip, quiet);
+        profile.loadLocalQCs(backgroundThreshold, useFiveReps, skip, forgive, quiet);
 
         if (! quiet)
             System.err.println("Loading Wiggles");
-        profile.loadWiggles(readExtension, skip, quiet);
+        profile.loadWiggles(readExtension, skip, forgive, quiet);
 
         if (! quiet)
             System.err.println("Writing HDF5");
